@@ -9,9 +9,16 @@ app.use(
     credentials: true,
   })
 );
-
+// middleware
 app.use(express.json({ limit: process.env.LIMIT_DATA }));
 app.use(express.urlencoded({ extended: true, limit: process.env.LIMIT_DATA }));
 app.use(express.static("public"));
 app.use(cookieParser());
+
+// routes imports
+import userRouter from "./routes/user.route.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 export { app };
