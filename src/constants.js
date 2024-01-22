@@ -1,1 +1,1 @@
-export const DB_NAME = "invoice-app";
+export const DB_NAME = "chai-aur-backend";
